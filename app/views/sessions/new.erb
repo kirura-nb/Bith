@@ -1,0 +1,15 @@
+<div class="">
+    <div class="">
+        <h2>ユーザーログイン</h2>
+
+        <%= form_with url: create_sessions_path, local: true, method: :post do |f| %>
+            <%# 学籍番号入力フォーム %>
+            <%= f.text_field :s_number, placeholder: "学籍番号", class: "form-box" %>
+
+            <%# パスワード入力フォーム %>
+            <%= f.password_field :password, placeholder: "パスワード", class: "form-box" %>
+
+            <%= f.submit "ログイン", class:"btn" %>
+        <% end %>
+    </div>
+</div>
