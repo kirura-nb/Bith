@@ -1,60 +1,263 @@
 @charset "UTF-8";
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    position: relative;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+}
+
+/* ログイン画面 */
+.users_new {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.logo img {
+    width: 270px;
+    height: auto;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    text-align: center;
+    bottom: 30px;
+    position: absolute;
+}
+.start-button, .login-button {
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    width: 330px;
+}
+.start-button {
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+}
+.start-button:hover {
+    background-color: #FF4B4B;
+}
+.login-button {
+    background-color: #E0E0E0;
+    color: #000000;
+}
+.login-button:hover {
+    background-color: #C0C0C0;
+}
+
+/* sign_up 共通*/
+.container {
+    text-align: center;
+    padding: 20px;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.back-button {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+}
+h2 {
+    color: #333;
+    font-size: 24px;
+}
+.next-button {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    padding: 12px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #ff5a5f;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* sign_up1 */
+.sign_up1 {
+    display: inline;
+}   
+.options-section {
+    margin: 20px 0;
+    text-align: left;
+}
+.label_box {
+    margin: 5px 10px;
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+#sex_男性, #sex_女性,
+#department_it学科, #department_動物学科, #department_地域経済医療事務学科,
+#department_公務員学科, #department_こども総合学科,
+#grade_1年, #grade_2年 {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.label_box label {
+    margin-top: 5px;
+}
+#sex_男性:checked, #sex_女性:checked,
+#department_it学科:checked, #department_動物学科:checked, #department_地域経済医療事務学科:checked,
+#department_公務員学科:checked, #department_こども総合学科:checked,
+#grade_1年:checked, #grade_2年:checked {
+    background-color: #ff5a5f;
+    border-color: #ff5a5f;
+}
+.select-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+.next-button:hover {
+    background-color: #e94e54;
+}
+
+/* sign_up2 */
+.hobby-item {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.hobby-grid form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0px 20px 18.5px;
+}
+.hobby_box {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.hobby_box label img {
+    width:140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+}
+.hobby_box input[type="checkbox"] {
+    display: none;
+}
+.hobby_box input[type="checkbox"]:checked + label {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+}
+.next-button.disabled {
+    background-color: #ccc;
+    pointer-events: none;
+}
+@media (max-width: 600px) {
+    .hobby-grid form {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
     
-    .profile-card {
+
+
+/* ホーム画面 */
+.profile-card {
     margin: 20px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    }
-    
-    .profile-slideshow {
+}
+
+.profile-slideshow {
     position: relative;
     width: 100%;
-    height: 580px;
-    }
-    
-    .profile-image {
+    height: 560px;
+}
+
+.profile-image {
     display: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    }
-    
-    .profile-image.active {
+}
+
+.profile-image.active {
     display: block;
-    }
-    
-    .profile-info {
+}
+
+.profile-info {
     padding: 15px;
-    }
-    
-    .profile-info h3 {
+}
+
+.profile-info h3 {
     margin: 0;
     font-size: 24px;
-    }
-    
-    .profile-info p {
+}
+
+.profile-info p {
     color: #888;
     font-size: 16px;
     margin: 5px 0;
-    }
-    
-    .action-buttons {
+}
+
+.action-buttons {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
-    }
-    
-    .action-buttons button {
+}
+
+.action-buttons button {
     background-color: #ff5a5f;
     color: #ffffff;
     border: none;
@@ -64,17 +267,17 @@ body {
     font-size: 24px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .button-dislike {
+}
+
+.button-dislike {
     background-color: #ccc; /* バツボタンの色 */
-    }
-    
-    .button-superlike {
+}
+
+.button-superlike {
     background-color: #4ab3f4; /* スーパーイイねボタンの色 */
-    }
-    
-    .footer-nav {
+}
+
+.footer-nav {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
@@ -83,9 +286,9 @@ body {
     bottom: 0;
     width: 100%;
     border-top: 1px solid #ddd;
-    }
-    
-    .footer-nav img {
+}
+
+.footer-nav img {
     width: 24px;
     height: 24px;
-    }
+}

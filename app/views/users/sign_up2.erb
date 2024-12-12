@@ -1,0 +1,140 @@
+<div class="header">
+    <%= link_to "←", 'javascript:history.back()', class: :"back-button" %>
+</div>
+
+<div class="container">
+    <h2>興味を選択してください</h2>
+    <h2> (3つ以上選択）</h2>
+
+    <div class="hobby-grid">
+        <!-- 趣味の選択肢 -->
+        <!-- 料理グルメ -->
+        <%= form_with model: @user_new, url: users_path, local: true, method: :post do |f| %>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby1", id: "料理グルメ"}, true, false) %>
+                <%= f.label(:hobby, for: "料理グルメ") do %>
+                    <img src="/assets/onikuuuuuuuuu.png" alt="料理グルメ">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby2", id: "音楽"}, true, false) %>
+                <%= f.label(:hobby, for: "音楽") do %>
+                    <img src="/assets/ongakuuuuuuuuu.png" alt="音楽">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby3", id: "旅行"}, true, false) %>
+                <%= f.label(:hobby, for: "旅行") do %>
+                    <img src="/assets/ryokouuuuuuu.png" alt="旅行">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby4", id: "まんが"}, true, false) %>
+                <%= f.label(:hobby, for: "まんが") do %>
+                    <img src="/assets/mannnnnga.png" alt="まんが">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby5", id: "スポーツ"}, true, false) %>
+                <%= f.label(:hobby, for: "スポーツ") do %>
+                    <img src="/assets/sport.png" alt="スポーツ">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby6", id: "映画"}, true, false) %>
+                <%= f.label(:hobby, for: "映画") do %>
+                    <img src="/assets/eiga.png" alt="映画">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby7", id: "ゲーム"}, true, false) %>
+                <%= f.label(:hobby, for: "ゲーム") do %>
+                    <img src="/assets/game.png" alt="ゲーム">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby8", id: "レジャー"}, true, false) %>
+                <%= f.label(:hobby, for: "レジャー") do %>
+                    <img src="/assets/regher.png" alt="レジャー">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby9", id: "アウトドア"}, true, false) %>
+                <%= f.label(:hobby, for: "アウトドア") do %>
+                    <img src="/assets/out.png" alt="アウトドア">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby10", id: "アート"}, true, false) %>
+                <%= f.label(:hobby, for: "アート") do %>
+                    <img src="/assets/art.png" alt="アート">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby11", id: "ファッション"}, true, false) %>
+                <%= f.label(:hobby, for: "ファッション") do %>
+                    <img src="/assets/fassyon.png" alt="ファッション">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby12", id: "お笑い"}, true, false) %>
+                <%= f.label(:hobby, for: "お笑い") do %>
+                    <img src="/assets/owarai.png" alt="お笑い">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby13", id: "動画"}, true, false) %>
+                <%= f.label(:hobby, for: "動画") do %>
+                    <img src="/assets/douga.png" alt="動画">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby14", id: "動物"}, true, false) %>
+                <%= f.label(:hobby, for: "動物") do %>
+                    <img src="/assets/doubutu.png" alt="動物">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby15", id: "車"}, true, false) %>
+                <%= f.label(:hobby, for: "車") do %>
+                    <img src="/assets/car.png" alt="車">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby16", id: "本"}, true, false) %>
+                <%= f.label(:hobby, for: "本") do %>
+                    <img src="/assets/book.png" alt="本">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby17", id: "インターネット"}, true, false) %>
+                <%= f.label(:hobby, for: "インターネット") do %>
+                    <img src="/assets/internet.png" alt="インターネット">
+                <% end %>
+            </div>
+            <div class="hobby_box">
+                <%= f.check_box(:hobby, {class: "hobby18", id: "ものづくり"}, true, false) %>
+                <%= f.label(:hobby, for: "ものづくり") do %>
+                    <img src="/assets/diy.png" alt="ものづくり">
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+    <%= button_to "次へ", {controller: 'users', action: 'sign_up3'}, {method: :get, class: :"next-button disabled", id: :"nextButton"} %>
+</div>
+
+<script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const nextButton = document.getElementById('nextButton');
+
+    checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            if (checkedCount >= 3) {
+                nextButton.classList.remove('disabled');
+            } else {
+                nextButton.classList.add('disabled');
+            }
+        });
+    });
+</script>

@@ -1,0 +1,80 @@
+<div class="sign_up1">
+    <div class="header">
+        <%= link_to "←", 'javascript:history.back()', class: :"back-button" %>
+    </div>
+
+    <div class="container">
+        <h2>情報を選択してください</h2>
+        
+        <!-- 性別選択 -->
+        <div class="options-section">
+            <p>性別</p>
+            <%= form_with model: @user_new, url: users_path, local: true, method: :post do |f| %>
+                <div class="label_box">
+                    <%= f.radio_button(:sex, "男性") %>
+                    <%= f.label(:sex, "男性", value: "男性") %>
+                </div>
+                <div class="label_box">
+                    <%= f.radio_button(:sex, "女性") %>
+                    <%= f.label(:sex, "女性", value: "女性") %>
+                </div>
+            <% end %>
+        </div>
+
+        <!-- 年齢選択 -->
+        <div class="options-section">
+            <p>年齢</p>
+            <%= form_with model: @user_new, url: users_path, local: true, method: :post do |f| %>
+                <%= f.select :age, [[18, 18], [19, 19], [20, 20], [21, 21], [22, 22], [23, 23], [24, 24],
+                [25, 25], [26, 26], [27, 27], [28, 28], [29, 29], [30, 30], [31, 31], [32, 32], [33, 33],
+                [34, 34], [35, 35], [36, 36], [37, 37], [38, 38], [39, 39], [40, 40], [41, 41], [42, 42],
+                [43, 43], [44, 44], [45, 45], [46, 46], [47, 47], [48, 48], [49, 49], [50, 50]], { include_blank: "年齢を選択してください" }, { class: "select-input" } %> 歳
+            <% end %>
+        </div>
+
+        <!-- 学科選択 -->
+        <div class="options-section">
+            <p>学科</p>
+            <%= form_with model: @user_new, url: users_path, local: true, method: :post do |f| %>
+                <div class="label_box">
+                    <%= f.radio_button(:department, "IT学科") %>
+                    <%= f.label(:department, "IT学科", value:"IT学科") %>
+                </div>
+                <div class="label_box">
+                    <%= f.radio_button(:department, "動物学科") %>
+                    <%= f.label(:department, "動物学科", value:"動物学科") %>
+                </div>
+                <div class="label_box">
+                    <%= f.radio_button(:department, "地域経済医療事務学科") %>
+                    <%= f.label(:department, "地域経済医療事務学科", value:"地域経済医療事務学科") %>
+                </div>
+                <div class="label_box">
+                    <%= f.radio_button(:department, "公務員学科") %>
+                    <%= f.label(:department, "公務員学科", value: "公務員学科") %>
+                </div>
+                <div class="label_box">
+                    <%= f.radio_button(:department, "こども総合学科") %>
+                    <%= f.label(:department, "こども総合学科", value:"こども総合学科") %>
+                </div>
+            <% end %>
+        </div>
+
+        <!-- 学年選択 -->
+        <div class="options-section">
+            <p>学年</p>
+            <%= form_with model: @user_new, url: users_path, local: true, method: :post do |f| %>
+                <div class="label_box">
+                    <%= f.radio_button(:grade, "1年") %>
+                    <%= f.label(:grade, "1年", value: "1年") %>
+                </div>
+                <div class="label_box">
+                    <%= f.radio_button(:grade, "2年") %>
+                    <%= f.label(:grade, "2年", value: "2年") %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+
+    <!-- 次へボタン -->
+    <%= button_to "次へ", {controller: 'users', action: 'sign_up2'}, {method: :get, class: :"next-button"} %>
+</div>

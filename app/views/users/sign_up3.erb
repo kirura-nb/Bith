@@ -1,0 +1,33 @@
+<div class="header">
+    <%= link_to "←", 'javascript:history.back()', class: :"back-button" %>
+</div>
+
+<div class="header-container">
+    <h1>写真を登録しましょう</h1>
+    <div class="description"></div>
+    <div class="image-container">
+        <div class="image-preview" id="image-preview">
+            <img id="preview"  src="/assets/placeholder.jpg" alt="写真プレビュー">
+        </div>
+    </div>
+    <label class="upload-btn" for="upload">写真をアップロード</label>
+    <input type="file" id="upload" accept="image/*">
+    <div class="footer-link"></div>
+    <a href="./osusume.html" class="next-button">次へ</a>
+</div>
+
+<script>
+    const uploadInput = document.getElementById('upload');
+    const previewImage = document.getElementById('preview');
+
+    uploadInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewImage.src = e.target.result;
+            };
+        reader.readAsDataURL(file);
+        }
+    });
+</script>
