@@ -1,18 +1,10 @@
-<div class="">
-    <div class="">
-        <h2>アカウント作成</h2>
-
-        <%= form_with model: @user_new, url: users_path, local: true, method: :post do |f| %>
-            <%# 名前入力フォーム %>
-            <p><%= f.text_field :name, placeholder: "名前（2～16文字）", class: "form-box" %></p>
-            
-            <%# 学籍番号入力フォーム %>
-            <p><%= f.text_field :s_number, placeholder: "学籍番号", class: "form-box" %></p>
-
-            <%# パスワード入力フォーム %>
-            <p><%= f.password_field :password, placeholder: "パスワード（数字のみ）", class: "form-box" %></p>
-
-            <%= f.submit "アカウント作成", class:"btn" %>
-        <% end %>
+<div class="users_new">
+    <div>
+        <div class="logo">
+            <img src="/assets/bith.daikiPhoto.753765816.739612.jpeg" alt="bith logo"> <!-- ロゴ画像は任意で変更してください -->
+        </div>
+        
+        <%= button_to "さっそくはじめる", {controller: 'users', action: 'sign_up1'}, {method: :get, class: :"start-button"} %>
+        <%= button_to "ログイン", {controller: 'users', action: 'sign_in'}, {method: :get, class: :"login-button"} %>
     </div>
 </div>

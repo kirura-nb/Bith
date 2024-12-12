@@ -1,0 +1,17 @@
+<%# 削除 %>
+<h2>アカウント作成</h2>
+
+<%= form_with model: @user_new, url: users_path, local: true, method: :post do |f| %>
+    <%# 名前入力フォーム %>
+    <p><%= f.text_field :name, placeholder: "名前（2～16文字）", class: "form-box" %></p>
+    
+    <%# 学籍番号入力フォーム %>
+    <p><%= f.text_field :s_number, placeholder: "学籍番号", class: "form-box" %></p>
+
+    <%# パスワード入力フォーム %>
+    <p><%= f.password_field :password, placeholder: "パスワード（数字のみ）", class: "form-box" %></p>
+
+    <%= f.submit "アカウント作成", class:"btn" %>
+
+<% end %>
+<%# /削除 %>
